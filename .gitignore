@@ -87,3 +87,19 @@ nb-configuration.xml
 ## Miscellaneous
 ##############################
 *.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Build outputs
+out/
+build/
+target/
+bin/
+
+# Arquivos temporários
+*.log
+*.tmp
+*.bak
+*.swp
