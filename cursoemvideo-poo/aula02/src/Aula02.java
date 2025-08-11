@@ -7,5 +7,13 @@ public class Aula02 {
         c1.status();
         c1.destamapar();
         c1.rabiscar();
+
+        Caneta c2 = new Caneta();
+        c2.cor = "Preta";
+        c2.ponta = 1f;
+        c2.modelo = "Bic";
+        c2.tampar();
+        c2.status();
+        c2.rabiscar();
     }
 }
