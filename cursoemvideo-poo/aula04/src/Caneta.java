@@ -4,10 +4,9 @@ public class Caneta {
     private boolean tampada;
     private String cor;
 
-    public Caneta(float ponta, String modelo, boolean tampada, String cor) {
-        this.ponta = ponta;
+    public Caneta(String modelo, float ponta, String cor) {
         this.modelo = modelo;
-        this.tampada = tampada;
+        this.ponta = ponta;
         this.cor = cor;
         this.tampar();
     }
