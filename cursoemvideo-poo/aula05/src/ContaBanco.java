@@ -19,9 +19,11 @@ public class ContaBanco {
         this.status = true;
         if (Objects.equals(tipo, "CC")) {
             this.saldo += 50;
+            this.tipo = tipo;
         }
         else if (Objects.equals(tipo, "CP")) {
             this.saldo += 150;
+            this.tipo = tipo;
         } else {
             System.out.println("ERRO: Tipo de conta invalido.");
         }
@@ -36,7 +38,7 @@ public class ContaBanco {
     }
 
     public void sacar(float saque) {
-        if (status && saque >= this.saldo) {
+        if (status && saque <= this.saldo) {
             this.saldo -= saque;
         } else {
             System.out.println("ERRO: Saldo insuficiente");
