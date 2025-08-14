@@ -9,6 +9,15 @@ public class Pessoa {
         this.sexo = sexo;
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "idade=" + idade +
+                ", sexo=" + sexo +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
+
     public void fazerAniver() {
         this.setIdade(this.getIdade() + 1);
     }
