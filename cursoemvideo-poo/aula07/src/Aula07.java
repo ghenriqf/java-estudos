@@ -14,6 +14,9 @@ public class Aula07 {
 
         lutador[5] = new Lutador("Nerdaart", "EUA", 30, 1.81f, 105.7f, 12, 2, 4);
 
-        lutador[3].status();
+        Luta luta = new Luta();
+        luta.marcarLuta(lutador[1],lutador[0]);
+        luta.lutar();
+
     }
 }

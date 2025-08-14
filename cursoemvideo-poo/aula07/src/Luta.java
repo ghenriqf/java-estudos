@@ -1,4 +1,5 @@
 import java.util.Objects;
+import java.util.Random;
 
 public class Luta {
     private Lutador desafiado;
@@ -22,7 +23,9 @@ public class Luta {
         if (this.aprovada) {
             this.desafiado.apresentar();
             this.desafiante.apresentar();
-            int vencedor = 0;
+
+            Random aleatorio = new Random();
+            int vencedor = aleatorio.nextInt(3);
 
             switch (vencedor) {
                 case 0:
@@ -31,14 +34,15 @@ public class Luta {
                     this.desafiado.empatarLuta();
                     break;
                 case 1:
-                    System.out.println(this.desafiado + " ganhou!!");
+                    System.out.println(this.desafiado.getNome() + " ganhou!!");
                     this.desafiado.ganharLuta();
                     this.desafiante.perderLuta();
                     break;
                 case 2:
-                    System.out.println(this.desafiante + " ganhou!!");
+                    System.out.println(this.desafiante.getNome() + " ganhou!!");
                     this.desafiante.ganharLuta();
                     this.desafiado.perderLuta();
+                    break;
                 }
 
         } else {
@@ -46,11 +50,35 @@ public class Luta {
         }
     }
 
+    public Lutador getDesafiado() {
+        return desafiado;
+    }
+
     public void setDesafiado(Lutador desafiado) {
         this.desafiado = desafiado;
     }
 
-    public Lutador getDesafiado() {
-        return this.desafiado;
+    public Lutador getDesafiante() {
+        return desafiante;
+    }
+
+    public void setDesafiante(Lutador desafiante) {
+        this.desafiante = desafiante;
+    }
+
+    public int getRounds() {
+        return rounds;
+    }
+
+    public void setRounds(int rounds) {
+        this.rounds = rounds;
+    }
+
+    public boolean isAprovada() {
+        return aprovada;
+    }
+
+    public void setAprovada(boolean aprovada) {
+        this.aprovada = aprovada;
     }
 }
