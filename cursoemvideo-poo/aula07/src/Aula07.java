@@ -13,7 +13,7 @@ public class Aula07 {
         lutador[4] = new Lutador("UFOCobol", "Brasil", 37, 1.70f, 119.3f, 5, 4, 3);
 
         lutador[5] = new Lutador("Nerdaart", "EUA", 30, 1.81f, 105.7f, 12, 2, 4);
-        
+
         lutador[3].status();
     }
 }
