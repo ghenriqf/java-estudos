@@ -14,5 +14,10 @@ public class Main {
         a.locomover();
         p.locomover();
         r.locomover();
+
+        Canguru canguru = new Canguru();
+        canguru.locomover();
+        Cachorro cachorro = new Cachorro();
+        cachorro.emitirSom();
     }
 }
