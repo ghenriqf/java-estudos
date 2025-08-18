@@ -14,12 +14,11 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
+        return "nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", sexo=" + sexo +
                 ", experiencia=" + experiencia +
-                '}';
+                ",";
     }
 
     public void ganharExp() {

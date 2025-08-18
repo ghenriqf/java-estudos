@@ -7,7 +7,10 @@ public class Main {
 
         Gafanhoto g = new Gafanhoto("Gabriel",19,'M',"gabrielhenrique@gmail.com");
 
-        System.out.println(v[0].toString());
-        System.out.println(g.toString());
+        System.out.println("-------------VÍDEOS-------------\n" + v[0].toString() + "\n" + v[1].toString());
+        System.out.println("-----------GAFANHOTOS-----------\n" + g.toString());
+
+        Visualizacao vis = new Visualizacao(g,v[0]);
+        System.out.println(vis.toString());
     }
 }
