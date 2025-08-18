@@ -5,6 +5,24 @@ public class Video implements AcoesVideo{
     private int curtidas;
     private boolean reproduzindo;
 
+    public Video(String titulo) {
+        this.titulo = titulo;
+        this.avaliacao = 0;
+        this.views = 0;
+        this.curtidas = 0;
+        this.reproduzindo = false;
+    }
+
+    @Override
+    public String toString() {
+        return "Video{" +
+                "titulo='" + titulo + '\'' +
+                ", avaliacao=" + avaliacao +
+                ", views=" + views +
+                ", curtidas=" + curtidas +
+                ", reproduzindo=" + reproduzindo +
+                '}';
+    }
 
     @Override
     public void reproduzir() {
