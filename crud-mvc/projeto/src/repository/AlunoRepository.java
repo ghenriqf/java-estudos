@@ -11,7 +11,11 @@ public class AlunoRepository {
         alunos.put(aluno.getId(), aluno);
     }
 
-    public ArrayList listarAlunos() {
+    public void removerAluno(Integer id) {
+        alunos.remove(id);
+    }
+
+    public ArrayList<Aluno> listarAlunos() {
         ArrayList<Aluno> alunosLista = new ArrayList<>(alunos.values());
         return  alunosLista;
     }

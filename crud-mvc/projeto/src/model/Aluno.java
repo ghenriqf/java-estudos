@@ -1,12 +1,16 @@
 package model;
 
+import java.util.Random;
+
+
 public class Aluno {
+    Random gerador = new Random();
     private int id;
     private String nome;
     private int idade;
 
-    public Aluno(int id, String nome, int idade) {
-        this.id = id;
+    public Aluno(String nome, int idade) {
+        this.id = gerador.nextInt(100);
         this.nome = nome;
         this.idade = idade;
     }

@@ -6,9 +6,9 @@ import repository.AlunoRepository;
 
 public class Main {
     public static void main(String[] args) {
-        Aluno a = new Aluno(1,"Gabriel",18);
-        Aluno b = new Aluno(2,"Henrique",19);
-        Aluno c = new Aluno(3,"Freitas",20);
+        Aluno a = new Aluno("Gabriel",18);
+        Aluno b = new Aluno("Henrique",19);
+        Aluno c = new Aluno("Freitas",20);
 
         AlunoRepository alunos = new AlunoRepository();
         alunos.adicionarAluno(a);
