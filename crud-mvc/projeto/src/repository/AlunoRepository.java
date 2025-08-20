@@ -3,6 +3,7 @@ import model.Aluno;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class AlunoRepository {
     private final HashMap<Integer,Aluno> alunos = new HashMap<>();
@@ -15,9 +16,8 @@ public class AlunoRepository {
         alunos.remove(id);
     }
 
-    public ArrayList<Aluno> listarAlunos() {
-        ArrayList<Aluno> alunosLista = new ArrayList<>(alunos.values());
-        return  alunosLista;
+    public List<Aluno> listarAlunos() {
+        return new ArrayList<>(alunos.values());
     }
 
     public Aluno buscarPorId(Integer id) {

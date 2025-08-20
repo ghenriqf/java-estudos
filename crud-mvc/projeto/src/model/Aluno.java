@@ -1,15 +1,13 @@
 package model;
 
-import java.util.Random;
-
 public class Aluno {
-    Random gerador = new Random();
     private final int id;
     private String nome;
     private int idade;
+    private static int contador = 1000;
 
     public Aluno(String nome, int idade) {
-        this.id = gerador.nextInt(100);
+        this.id = contador++;
         this.nome = nome;
         this.idade = idade;
     }
