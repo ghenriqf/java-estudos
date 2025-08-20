@@ -2,10 +2,9 @@ package model;
 
 import java.util.Random;
 
-
 public class Aluno {
     Random gerador = new Random();
-    private int id;
+    private final int id;
     private String nome;
     private int idade;
 
@@ -26,10 +25,6 @@ public class Aluno {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {

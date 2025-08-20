@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AlunoRepository {
-    private HashMap<Integer,Aluno> alunos = new HashMap<>();
+    private final HashMap<Integer,Aluno> alunos = new HashMap<>();
 
     public void adicionarAluno(Aluno aluno) {
         alunos.put(aluno.getId(), aluno);
