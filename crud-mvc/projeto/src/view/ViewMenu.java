@@ -1,6 +1,7 @@
 package view;
 
 import controller.AlunoController;
+import model.Aluno;
 
 import java.util.Scanner;
 
@@ -47,17 +48,44 @@ public class ViewMenu {
                 System.out.println("Aluno adicionado com sucesso!");
                 break;
             } catch (RuntimeException e) {
-                System.out.println("ERRO: " + e.getMessage());
+                System.out.println("CONTROLLER ERROR: " + e.getMessage());
             }
         }
     }
 
     public void removerAluno() {
-
+        while (true){
+            int idAlunoValidado = 0;
+            while (true) {
+                try {
+                    System.out.print("Informe o id do aluno: ");
+                    String idInput = scanner.nextLine();
+                    idAlunoValidado = Integer.parseInt(idInput);
+                    break;
+                } catch (Exception e) {
+                    System.out.println("ERRO: Informe um id válido");
+                }
+            }
+            try {
+                controller.removerAluno(idAlunoValidado);
+                break;
+            } catch (RuntimeException e) {
+                System.out.println("CONTROLLER ERROR: " + e.getMessage());
+            }
+        }
     }
 
     public void listarAlunos() {
+        try {
+            System.out.println("ALUNOS:");
+            for(Aluno a : controller.listarAlunos() ) {
+                System.out.println("------------------------------");
+                System.out.println(a);
+            }
 
+        } catch (RuntimeException e) {
+            System.out.println("CONTROLLER ERROR: " + e.getMessage());
+        }
     }
 
     public void buscarAluno() {
@@ -65,7 +93,7 @@ public class ViewMenu {
     }
 
     public void sair() {
-
+        System.out.println("SISTEMA FINALIZANDO...");
     }
 
 }

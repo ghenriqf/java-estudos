@@ -12,7 +12,7 @@ public class AlunoRepository {
         alunos.put(aluno.getId(), aluno);
     }
 
-    public void removerAluno(Integer id) {
+    public void removerAluno(int id) {
         alunos.remove(id);
     }
 
@@ -20,7 +20,7 @@ public class AlunoRepository {
         return new ArrayList<>(alunos.values());
     }
 
-    public Aluno buscarPorId(Integer id) {
+    public Aluno buscarPorId(int id) {
         return alunos.get(id);
     }
 }

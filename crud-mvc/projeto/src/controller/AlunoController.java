@@ -29,7 +29,7 @@ public class AlunoController {
         return alunos;
     }
 
-    public Aluno buscarPorId(Integer id) {
+    public Aluno buscarPorId(int id) {
         Aluno aluno = alunoRepository.buscarPorId(id);
         if (aluno == null) {
             throw new RuntimeException("Não tem nenhum aluno com esse id na lista.");
