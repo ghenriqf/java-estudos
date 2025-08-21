@@ -89,22 +89,28 @@ public class ViewMenu {
     }
 
     public void buscarAluno() {
-        int idAlunoValidado = 0;
-        try {
-            System.out.print("Informe o ID do aluno: ");
-            String idInput = scanner.nextLine();
-            idAlunoValidado = Integer.parseInt(idInput);
-        } catch (RuntimeException e) {
-            System.out.println("ERRO: Informe ID válido.");;
-        }
+        while (true) {
+            int idAlunoValidado = 0;
+            while (true){
+                try {
+                    System.out.print("Informe o ID do aluno: ");
+                    String idInput = scanner.nextLine();
+                    idAlunoValidado = Integer.parseInt(idInput);
+                    break;
+                } catch (RuntimeException e) {
+                    System.out.println("ERRO: Informe ID válido.");
+                }
+            }
 
-        try {
-            System.out.println("ALUNO ENCONTRADO:");
-            System.out.println("------------------------------");
-            System.out.println(controller.buscarPorId(idAlunoValidado));
-            System.out.println("------------------------------");
-        } catch (RuntimeException e) {
-            System.out.println("CONTROLLER ERROR: " + e.getMessage());;
+            try {
+                System.out.println("ALUNO ENCONTRADO:");
+                System.out.println("------------------------------");
+                System.out.println(controller.buscarPorId(idAlunoValidado));
+                System.out.println("------------------------------");
+                break;
+            } catch (RuntimeException e) {
+                System.out.println("CONTROLLER ERROR: " + e.getMessage());
+            }
         }
     }
 
