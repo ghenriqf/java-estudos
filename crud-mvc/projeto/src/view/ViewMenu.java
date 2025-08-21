@@ -63,7 +63,7 @@ public class ViewMenu {
                     idAlunoValidado = Integer.parseInt(idInput);
                     break;
                 } catch (Exception e) {
-                    System.out.println("ERRO: Informe um id válido");
+                    System.out.println("ERRO: Informe um ID válido");
                 }
             }
             try {
@@ -89,7 +89,23 @@ public class ViewMenu {
     }
 
     public void buscarAluno() {
+        int idAlunoValidado = 0;
+        try {
+            System.out.print("Informe o ID do aluno: ");
+            String idInput = scanner.nextLine();
+            idAlunoValidado = Integer.parseInt(idInput);
+        } catch (RuntimeException e) {
+            System.out.println("ERRO: Informe ID válido.");;
+        }
 
+        try {
+            System.out.println("ALUNO ENCONTRADO:");
+            System.out.println("------------------------------");
+            System.out.println(controller.buscarPorId(idAlunoValidado));
+            System.out.println("------------------------------");
+        } catch (RuntimeException e) {
+            System.out.println("CONTROLLER ERROR: " + e.getMessage());;
+        }
     }
 
     public void sair() {
