@@ -1,9 +1,8 @@
 package com.ghenriqf.spring_estudos.controller;
 
+import com.ghenriqf.spring_estudos.domain.User;
 import com.ghenriqf.spring_estudos.service.HelloWorldService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/hello-world")
@@ -15,9 +14,14 @@ public class HelloWorldController {
         this.helloWorldService = helloWorldService;
 
     }
-    @GetMapping
 
+    @GetMapping
     public String helloWorld() {
         return helloWorldService.helloName("Gabriel");
+    }
+
+    @PostMapping
+    public String helloWorldPost(@RequestBody User body) {
+        return "Hello World " + body.getName();
     }
 }
