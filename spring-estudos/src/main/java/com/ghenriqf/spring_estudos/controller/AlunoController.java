@@ -24,4 +24,15 @@ public class AlunoController {
         return alunoService.listarTodos();
     }
 
+    @GetMapping("/{id}")
+    public Aluno buscarPorId(@PathVariable Long id) {
+        return alunoService.buscarPorId(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletarAluno(@PathVariable Long id) {
+        alunoService.deletar(id);
+    }
+
+
 }
