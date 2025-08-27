@@ -2,6 +2,7 @@ package com.ghenriqf.spring_estudos.controller;
 
 import com.ghenriqf.spring_estudos.domain.Aluno;
 import com.ghenriqf.spring_estudos.service.AlunoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class AlunoController {
     }
 
     @PostMapping
-    public Aluno criarAluno (@RequestBody Aluno aluno) {
+    public Aluno criarAluno (@RequestBody @Valid Aluno aluno) {
         return alunoService.salvar(aluno);
     }
 
