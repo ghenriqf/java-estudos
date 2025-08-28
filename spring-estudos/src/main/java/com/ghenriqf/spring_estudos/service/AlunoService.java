@@ -1,6 +1,7 @@
 package com.ghenriqf.spring_estudos.service;
 
 import com.ghenriqf.spring_estudos.domain.Aluno;
+import com.ghenriqf.spring_estudos.exception.AlunoNotFoundException;
 import com.ghenriqf.spring_estudos.repository.AlunoRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -29,7 +30,7 @@ public class AlunoService {
 
     public Aluno buscarPorId(Long id) {
         return alunoRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
+                .orElseThrow(() -> new AlunoNotFoundException(id));
     }
 
     public void deletar(Long id) {
